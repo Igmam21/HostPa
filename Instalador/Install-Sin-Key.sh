@@ -237,9 +237,9 @@ done
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► INSTALACION MULTIPLE ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►► INSTALACION HOSTPA VPS ◄◄ <<=====   \033[1;37m"
 msg -bar2
-print_center -ama "SCRIPT DISPONIBLES"
+print_center -ama "Por favor ingrese el numero para Continuar"
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
@@ -426,11 +426,11 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
 #echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR HostPa MOD MOD 9.9x  \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \033[1;97m INSTALAR HostPa MOD MOD 9.9x  \e[97m \n"
 #echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
 $echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
 msg -bar
-echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
+echo -ne "\033[1;97mIngrese el numero para instalar:\e[32m "
 read opcao
 case $opcao in
 2)

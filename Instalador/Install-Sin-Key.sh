@@ -278,7 +278,7 @@ install_oficial() {
   [[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
   [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
   touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/Igmam21/HostPa/main/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
   

@@ -20,6 +20,7 @@ echo "$v1" >/etc/versin_script
 v22=$(cat /etc/versin_script)
 vesaoSCT="\033[1;31m [ \033[1;32m($v22)\033[1;97m\033[1;31m ]"
 
+
 ### COLORES Y BARRA
 msg() {
   BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
@@ -161,7 +162,7 @@ dependencias() {
 
 post_reboot() {
   echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/Igmam21/HostPa/main/Instalador/Install-Sin-Key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
-  title -verd "ACTULIZACION DE SISTEMA COMPLETA"
+  title -verd "ACTUALIZACION DE SISTEMA COMPLETA"
   print_center -ama "La instalacion continuara\ndespues del reinicio!!!"
   msg -bar
 }
@@ -203,9 +204,9 @@ install_continue() {
   sleep 2
   tput cuu1 && tput dl1
   msg -bar
-  print_center -ama "Si fallo alguna inst.  apt install NOMBRE DE PAQUETE"
+  print_center -ama "Si algunas de las dependencias fallo!!!\nal terminar, puede intentar instalar\nla misma manualmente usando el siguiente comando\napt install nom_del_paquete"
   msg -bar
-  read -t 60 -n 1 -rsp $'\033[1;39m       << Enter para Continuar >>\n'
+  read -t 60 -n 1 -rsp $'\033[1;39m       << Presiona enter para Continuar >>\n'
 }
 
 while :; do
@@ -228,13 +229,14 @@ done
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► INSTALACION MULTIPLE ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►► HostPa VPS ◄◄ <<=====   \033[1;37m"
 msg -bar2
 print_center -ama "SCRIPT DISPONIBLES"
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
+
 
 #VPS-MX 8.5 OFICIAL
 install_oficial() {
@@ -248,9 +250,10 @@ install_oficial() {
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
 
+
+
   #Descargando el paquete
-  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.4g%20Oficial/VPS-MX.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
+  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.4g%20Oficial/VPS-MX.tar.xz >/dev/null 2>&1  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
   chmod +x VPS-MX.tar.xz >/dev/null 2>&1
   rm -rf VPS-MX.tar.xz
   cd
@@ -281,8 +284,6 @@ install_oficial() {
   wget -O /bin/resetsshdrop https://raw.githubusercontent.com/Igmam21/HostPa/main/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-  
-#MENSAJE PARA LA VERSION OFICIAL
   echo "PasswordAuthentication yes" -e "\e[1;92m             >> INSTALACION COMPLETADA <<" >>/etc/ssh/sshd_configecho && msg bar2
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
@@ -301,7 +302,6 @@ echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' 
 echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n\n"' >> ~/.bashrc
-echo 'echo -e "\t\e[1;32m                INTERNET PANNEL  V9      \e[0m" ' >> ~/.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.4g%20Oficial/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
@@ -317,15 +317,14 @@ echo 'echo -e "\t\e[1;32m                INTERNET PANNEL  V9      \e[0m" ' >> ~/
   service ssh restart &>/dev/null
   clear && clear
   msg -bar
-  #MENSAJE PARA LA VERSION 9.9X MOD
+
+ #MENSAJE PARA LA VERSION 9.9X MOD
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 
 }
-
-
-#VPS-MX 8.6 MOD AHORA MOD 9.9
+#VPS-MX 8.6 MOD
 install_mod() {
   clear && clear
   msg -bar
@@ -337,16 +336,17 @@ install_mod() {
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
 
-  #Descarga la version modidicada para 9.9
+ #Descarga la version modidicada para 9.9
   wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
   tar -xf VPS-MX.tar >/dev/null 2>&1
   chmod +x VPS-MX.tar >/dev/null 2>&1
   rm -rf VPS-MX.tar
+
   cd
   chmod -R 755 /etc/VPS-MX
   rm -rf /etc/VPS-MX/MEUIPvps
   echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MX/menu" >/usr/bin/hostpa && chmod +x /usr/bin/hostpa
+  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
   echo "$slogan" >/etc/VPS-MX/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
@@ -381,14 +381,14 @@ install_mod() {
   echo "sudo resetsshdrop" >>/etc/rc.local
   echo "sleep 2s" >>/etc/rc.local
   echo "exit 0" >>/etc/rc.local
-echo 'clear' >> ~/.bashrc
-echo 'echo ""' >> ~/.bashrc
+  echo 'clear' >>.bashrc
+  echo 'echo ""' >>.bashrc
 echo 'echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " ' >> ~/.bashrc
 echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n\n"' >> ~/.bashrc
-echo 'echo -e "\t\e[1;32m                INTERNET PANNEL  V9      \e[0m" ' >> ~/.bashrc
+
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/versionActual &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
@@ -404,19 +404,19 @@ echo 'echo -e "\t\e[1;32m                INTERNET PANNEL  V9      \e[0m" ' >> ~/
   service ssh restart &>/dev/null
   clear && clear
   msg -bar
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
+ echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      PARA ACCEDER AL PANNEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
-
-
-
+#LATAM 11.g
+install_latam() {
+  echo "--PROX---"
+}
 
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 9.9x MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 9.9 \e[97m \n"
 
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "

@@ -324,26 +324,30 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 
 }
-#VPS-MX 8.6 MOD
+
+
+#VPS-MX 8.6 MOD AHORA MOD 9.9
 install_mod() {
   clear && clear
   msg -bar
-  echo -ne "\033[1;97m INGRESAR SLOGAN: \033[1;32m" && read slogan
+  echo -ne "\033[1;97mSLOGAN: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MX.tar.xz >/dev/null 2>&1
-  chmod +x VPS-MX.tar.xz >/dev/null 2>&1
-  rm -rf VPS-MX.tar.xz
+  
+  #Descarga la version modidicada para 9.9
+  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
+  tar -xf VPS-MX.tar >/dev/null 2>&1
+  chmod +x VPS-MX.tar >/dev/null 2>&1
+  rm -rf VPS-MX.tar
   cd
   chmod -R 755 /etc/VPS-MX
   rm -rf /etc/VPS-MX/MEUIPvps
   echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
+  echo "/etc/VPS-MX/menu" >/usr/bin/hostpa && chmod +x /usr/bin/hostpa
   echo "$slogan" >/etc/VPS-MX/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
@@ -370,7 +374,7 @@ install_mod() {
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.5x%20Mod/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/Igmam21/HostPa/main/versionActual")
   echo "$v1" >/etc/versin_script
   wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.5x%20Mod/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
@@ -385,9 +389,9 @@ echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   "
 echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " 
 echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " 
 echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n"
-echo -e "\t\e[1;32mINTERNET PANNEL V1.1      \e[0m" 
+echo -e "\t\e[1;32mINTERNET PANNEL V9.9      \e[0m" 
 echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.5x%20Mod/Version &>/dev/null' >>.bashrc
+  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/versionActual &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
@@ -406,10 +410,16 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
   echo -e "      PARA ACCEDER AL PANNEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
+
+
+
+
 #LATAM 11.g
 install_latam() {
   echo "--PROX---"
 }
+
+
 #LATAM ADMRufu 31-03-2022
 install_ADMRufu() {
   clear && clear
@@ -454,6 +464,8 @@ install_ADMRufu() {
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
 #CHUMOGH
+
+
 install_ChumoGH() {
   clear && clear
   msg -bar
@@ -559,7 +571,6 @@ echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIA
 echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 9.9x MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m5\e[1;93m]\033[1;31m > \033[1;97m INSTALAR LATAM 1.1g (Organizando ficheros) \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao

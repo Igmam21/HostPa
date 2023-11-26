@@ -14,7 +14,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -sf /usr/share/zoneinfo/America/Panama /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/Igmam21/HostPa/main/version")
+v1=$(curl -sSL "https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.4g%20Oficial/Version")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -169,7 +169,7 @@ post_reboot() {
 install_start() {
   msg -bar
 
-  echo -e "\e[1;97m           \e[5m\033[1;100m   ACTULIZACION DE SISTEMA   \033[1;37m"
+  echo -e "\e[46m \e[1;37m   ACTULIZACION DE SISTEMA  \e[0m "
   msg -bar
   print_center -ama "Se actualizaran los paquetes del sistema.\n Puede demorar y pedir algunas confirmaciones.\n"
   msg -bar3
@@ -178,7 +178,7 @@ install_start() {
   [[ "$opcion" != @(s|S) ]] && stop_install
   clear && clear
   msg -bar
-  echo -e "\e[1;97m           \e[5m\033[1;100m   ACTULIZACION DE SISTEMA   \033[1;37m"
+  echo -e "\e[46m \e[1;37m   ACTULIZACION DE SISTEMA  \e[0m "
   msg -bar
   os_system
   repo "${vercion}"

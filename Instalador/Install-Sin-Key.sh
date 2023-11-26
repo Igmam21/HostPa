@@ -328,8 +328,9 @@ install_oficial() {
   clear && clear
   msg -bar
   #MENSAJE PARA LA VERSION 9.9X MOD
-  echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+
+  echo -e "\e[36m_______________\e[1;37m>> INSTALACION COMPLETADA <<________________\e[0m" && msg bar2
+  echo -e "\e[36m_________\e[1;37m>>COMANDO PRINCIPAL PARA ENTRAR AL PANEL__________\e[0m" && msg bar2
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 
 }

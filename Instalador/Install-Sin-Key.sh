@@ -1,7 +1,4 @@
 #!/bin/bash
-clear && clear
-
-
 
 echo 'clear' >> ~/.bashrc
 echo 'echo ""' >> ~/.bashrc
@@ -12,7 +9,6 @@ echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " ' 
 echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n\n"' >> ~/.bashrc
 echo 'echo -e "\t\e[1;32m                SHOUTCAST PANNEL  V1.0.1      \e[0m" ' >> ~/.bashrc
 echo 'echo -e "\e[1;33m                             www.host-pa.com    \e[0m/n/n" ' >> ~/.bashrc
-
 
 rm -rf /etc/localtime &>/dev/null
 
@@ -50,6 +46,8 @@ msg() {
   "-bar2" | "-bar") cor="$————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
   esac
 }
+
+
 fun_bar() {
   comando="$1"
   _=$(
@@ -137,7 +135,7 @@ os_system() {
 
 
 dependencias() {
-  soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip openssl screen cron iptables lsof pv boxes nano at mlocate gawk grep bc jq curl npm nodejs socat netcat netcat-traditional net-tools cowsay figlet lolcat apache2"
+  soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip openssl screen cron iptables lsof pv boxes nano at mlocate gawk grep bc jq curl npm nodejs socat netcat netcat-traditional net-tools cowsay figlet lolcat nginx"
 
   for i in $soft; do
     leng="${#i}"
@@ -191,8 +189,6 @@ install_start() {
   msg -bar
   os_system
   repo "${vercion}"
-  apt update -y
-  apt upgrade -y
 }
 
 install_continue() {
@@ -205,8 +201,8 @@ install_continue() {
   msg -bar3
   dependencias
   msg -bar3
-  sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf >/dev/null 2>&1
-  service apache2 restart >/dev/null 2>&1
+  sed -i "s;Listen 80;Listen 81;g" /etc/nginx/ports.conf >/dev/null 2>&1
+  service nginx restart >/dev/null 2>&1
   print_center -azu "Removiendo paquetes obsoletos"
   apt autoremove -y &>/dev/null
   sleep 2
@@ -270,8 +266,8 @@ install_oficial() {
   echo "$slogan" >/etc/VPS-MX/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
+  [[ ! -d /usr/local/lib/ubuntn/nginx ]] && mkdir /usr/local/lib/ubuntn/nginx
+  [[ ! -d /usr/local/lib/ubuntn/nginx/ver ]] && mkdir /usr/local/lib/ubuntn/nginx/ver
   [[ ! -d /usr/share ]] && mkdir /usr/share
   [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
@@ -305,13 +301,7 @@ install_oficial() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
- echo 'echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " ' 
- echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' 
- echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   "  '
- echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   "  '
- echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n" '
- echo 'echo -e "\t\e[1;32mINTERNET PANNEL V1.1      \e[0m"  '
- echo 'echo -e "\e[1;33mwww.host-pa.com    \e[0m\n" '
+
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.4g%20Oficial/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
@@ -360,8 +350,8 @@ install_mod() {
   echo "$slogan" >/etc/VPS-MX/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
-  [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
-  [[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
+  [[ ! -d /usr/local/lib/ubuntn/nginx ]] && mkdir /usr/local/lib/ubuntn/nginx
+  [[ ! -d /usr/local/lib/ubuntn/nginx/ver ]] && mkdir /usr/local/lib/ubuntn/nginx/ver
   [[ ! -d /usr/share ]] && mkdir /usr/share
   [[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
@@ -393,14 +383,6 @@ install_mod() {
   echo "exit 0" >>/etc/rc.local
 echo 'clear' >> ~/.bashrc
 echo 'echo ""' >> ~/.bashrc
-echo 'echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " ' >> ~/.bashrc
-echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' >> ~/.bashrc
-echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " ' >> ~/.bashrc
-echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " ' >> ~/.bashrc
-echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n\n"' >> ~/.bashrc
-echo 'echo -e "\t\e[1;32m                SHOUTCAST PANNEL  V9.9      \e[0m" ' >> ~/.bashrc
-echo 'echo -e "\e[1;33m                             www.host-pa.com    \e[0m/n/n" ' >> ~/.bashrc
-
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/versionActual &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc

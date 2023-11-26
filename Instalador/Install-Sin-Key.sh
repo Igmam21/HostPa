@@ -47,7 +47,7 @@ msg() {
   -bra) cor="${VERMELHO}" && echo -ne "${cor}${2}${SEMCOR}" ;;
   -nazu) cor="${COLOR[6]}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}" ;;
   -gri) cor="\e[5m\033[1;100m" && echo -ne "${cor}${2}${SEMCOR}" ;;
-  "-bar2" | "-bar") cor="${VERMELHO}————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
+  "-bar2" | "-bar") cor="$————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
   esac
 }
 fun_bar() {
@@ -198,7 +198,7 @@ install_start() {
 install_continue() {
   os_system
   msg -bar
-  echo -e "      \e[5m\033[1;100m   COMPLETANDO PAQUETES PARA EL SCRIPT   \033[1;37m"
+ echo -e "\e[46m\e[1;97m\e[5m   COMPLETANDO PAQUETES PARA EL SCRIPT   \e[0m"
   msg -bar
   print_center -ama "$distro $vercion"
   print_center -verd "INSTALANDO DEPENDENCIAS"

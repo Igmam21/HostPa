@@ -203,9 +203,9 @@ install_continue() {
   sleep 2
   tput cuu1 && tput dl1
   msg -bar
-  print_center -ama "Si algunas de las dependencias fallo!!!\nal terminar, puede intentar instalar\nla misma manualmente usando el siguiente comando\napt install nom_del_paquete"
+  print_center -ama "Si fallo alguna inst.  apt install NOMBRE DE PAQUETE"
   msg -bar
-  read -t 60 -n 1 -rsp $'\033[1;39m       << Presiona enter para Continuar >>\n'
+  read -t 60 -n 1 -rsp $'\033[1;39m       << Enter para Continuar >>\n'
 }
 
 while :; do
@@ -230,7 +230,7 @@ clear && clear
 msg -bar2
 echo -e " \e[5m\033[1;100m   =====>> ►► INSTALACION MULTIPLE ◄◄ <<=====   \033[1;37m"
 msg -bar2
-print_center -ama "LISTADO DE SCRIPT DISPONIBLES"
+print_center -ama "SCRIPT DISPONIBLES"
 msg -bar
 #-BASH SOPORTE ONLINE
 wget https://www.dropbox.com/s/gt8g3y8ol4nj4hf/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1

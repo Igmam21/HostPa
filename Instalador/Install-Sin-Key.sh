@@ -339,7 +339,7 @@ install_mod() {
   cd /etc
   
   #Descarga la version modidicada para 9.9
-  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
+  wget https://github.com/Igmam21/HostPa/blob/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
   tar -xf VPS-MX.tar >/dev/null 2>&1
   chmod +x VPS-MX.tar >/dev/null 2>&1
   rm -rf VPS-MX.tar

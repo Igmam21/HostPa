@@ -281,6 +281,8 @@ install_oficial() {
   wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NetVPS/VPS-MX_Oficial/master/LINKS-LIBRERIAS/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
+  
+#MENSAJE PARA LA VERSION OFICIAL
   echo "PasswordAuthentication yes" -e "\e[1;92m             >> INSTALACION COMPLETADA <<" >>/etc/ssh/sshd_configecho && msg bar2
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
@@ -316,6 +318,7 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
   service ssh restart &>/dev/null
   clear && clear
   msg -bar
+  #MENSAJE PARA LA VERSION 9.9X MOD
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
@@ -325,7 +328,7 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
 install_mod() {
   clear && clear
   msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
+  echo -ne "\033[1;97m INGRESAR SLOGAN: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
@@ -400,7 +403,7 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
   clear && clear
   msg -bar
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
-  echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+  echo -e "      PARA ACCEDER AL PANNEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
 #LATAM 11.g
@@ -553,7 +556,7 @@ install_ChumoGH() {
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
 echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 8.6x MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 9.9x MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
 echo -ne " \e[1;93m [\e[1;32m5\e[1;93m]\033[1;31m > \033[1;97m INSTALAR LATAM 1.1g (Organizando ficheros) \e[97m \n"

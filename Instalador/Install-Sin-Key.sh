@@ -392,13 +392,14 @@ install_mod() {
   echo "exit 0" >>/etc/rc.local
 echo 'clear' >> ~/.bashrc
 echo 'echo ""' >> ~/.bashrc
-echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " 
-echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " 
-echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " 
-echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " 
-echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n"
-echo -e "\t\e[1;32mINTERNET PANNEL V9.9      \e[0m" 
-echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
+echo 'echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " ' >> ~/.bashrc
+echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' >> ~/.bashrc
+echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " ' >> ~/.bashrc
+echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " ' >> ~/.bashrc
+echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n\n"' >> ~/.bashrc
+echo 'echo -e "\t\e[1;32m                SHOUTCAST PANNEL  V9.9      \e[0m" ' >> ~/.bashrc
+echo 'echo -e "\e[1;33m                             www.host-pa.com    \e[0m/n/n" ' >> ~/.bashrc
+
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/versionActual &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc

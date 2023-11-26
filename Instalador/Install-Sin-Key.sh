@@ -337,9 +337,9 @@ install_mod() {
   clear && clear
   mkdir /etc/VPS-MX >/dev/null 2>&1
   cd /etc
-  
+
   #Descarga la version modidicada para 9.9
-  wget https://github.com/Igmam21/HostPa/blob/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
+  wget https://github.com/Igmam21/HostPa/raw/main/SCRIPT-v8.5x%20Mod/VPS-MX.tar >/dev/null 2>&1
   tar -xf VPS-MX.tar >/dev/null 2>&1
   chmod +x VPS-MX.tar >/dev/null 2>&1
   rm -rf VPS-MX.tar
@@ -382,8 +382,8 @@ install_mod() {
   echo "sudo resetsshdrop" >>/etc/rc.local
   echo "sleep 2s" >>/etc/rc.local
   echo "exit 0" >>/etc/rc.local
-  echo 'clear' >>.bashrc
-  echo 'echo ""' >>.bashrc
+echo 'clear' >> ~/.bashrc
+echo 'echo ""' >> ~/.bashrc
 echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " 
 echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " 
 echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " 

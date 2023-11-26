@@ -305,13 +305,13 @@ install_oficial() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
-echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " 
-echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " 
-echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   " 
-echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   " 
-echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n"
-echo -e "\t\e[1;32mINTERNET PANNEL V1.1      \e[0m" 
-echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
+ echo 'echo -e "\t\033[91m  _   _   _____   ____  _____      ____   _____    " ' 
+ echo 'echo -e "\t\033[91m | | | | |  _  | / ___||_   _|    | |_ \ |  _  |   " ' 
+ echo 'echo -e "\t\033[91m | |_| | | | | | \___ \  | |  ___ | |_) || |_| |   "  '
+ echo 'echo -e "\t\033[91m |  _  | | |_| |  ___) | | | |___|| |__/ | |_| |   "  '
+ echo 'echo -e "\t\033[91m |_| |_| |_____| |____/  |_|      |_|    |_| |_|   \n" '
+ echo 'echo -e "\t\e[1;32mINTERNET PANNEL V1.1      \e[0m"  '
+ echo 'echo -e "\e[1;33mwww.host-pa.com    \e[0m\n" '
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/Igmam21/HostPa/main/SCRIPT-v8.4g%20Oficial/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >>.bashrc
@@ -319,7 +319,7 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
   echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo VPSMX o menu "' >>.bashrc
+  echo 'echo -e "\t\037[46mmPARA MOSTAR PANEL BASH ESCRIBA: menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
   rm -rf VPS-MX.sh
@@ -425,18 +425,18 @@ echo -e "\e[1;33mwww.host-pa.com    \e[0m\n"
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR 9.9x MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
+#echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5 OFICIAL \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR HostPa MOD MOD 9.9x  \e[97m \n"
+#echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
+$echo -ne " \e[1;93m [\e[1;32m4\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ChumoGH MOD \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mDigite solo el numero segun su respuesta:\e[32m "
 read opcao
 case $opcao in
-1)
+2)
   install_oficial
   ;;
-2)
+1)
   install_mod
   ;;
 3)

@@ -680,8 +680,10 @@
  clear
  add_user "${nomeuser}" "${senhauser}" "${diasuser}" "${limiteuser}" #&& msg -ama "$(fun_trans "            Usuario Creado con Exito")" || msg -verm "$(fun_trans "         Error, Usuario no creado")"
  msg -bar
- msg -ne "$(fun_trans "  >> IP del Servidor"): " && echo -e "$(meu_ip)"
- msg -ne "$(fun_trans "  >> Usuario"): " && echo -e "$nomeuser"
+# msg -ne "$(fun_trans "  >> IP del Servidor"): " && echo -e "$(meu_ip)"
+  msg -ne "$(fun_trans "  >> IP del Servidor"): " && echo -e "$(curl -s ifconfig.me)"
+
+msg -ne "$(fun_trans "  >> Usuario"): " && echo -e "$nomeuser"
  msg -ne "$(fun_trans "  >> Contraseña"): " && echo -e "$senhauser"
  msg -ne "$(fun_trans "  >> Dias de Duracion"): " && echo -e "$diasuser"
  msg -ne "$(fun_trans "  >> Fecha de Expiracion"): " && echo -e "$(date "+%F" -d " + $diasuser days")"
